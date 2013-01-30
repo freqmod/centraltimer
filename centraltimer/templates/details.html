@@ -1,0 +1,128 @@
+<html>
+	<head>
+		<script type="text/javascript" src="{{ STATIC_URL }}jquery.min.js"></script>          
+		<script type="text/javascript" src="{{ STATIC_URL }}centralscript.js"></script>          
+		<script type="text/javascript" src="{{ STATIC_URL }}detailsscript.js"></script>
+		<script type="text/javascript">                                         
+   		 $(document).ready(function() {
+   			resyncTimeout();
+   			ajaxUpdate();
+			setInterval(ajaxUpdate, 5000);
+   			// 
+ 		 });
+ 		</script>
+ 		<style>
+ 		body{
+ 			background-color: black;
+ 			color: white;
+ 			font-family: courier;
+ 		}
+ 		.textcontent, .mainmessage, .subblockmessage{
+ 			font-family: times;
+ 		}
+ 		.mainblock{
+ 			width: 100%;
+ 		}
+ 		.mainclocksmall{
+ 			width: 100%;
+ 			text-align: right;
+ 			position:absolute; top:0.5em; right:0.5em;
+ 		}
+ 		.warning{
+ 			position:absolute; top:0.5em; right:5em;
+ 		}
+ 		.subblocktable{
+ 			background-color: rgb(30,30,30);
+ 			width:100%;
+ 			border: 0px;
+ 			border-collapse: collapse;
+ 			/*font-size: 100%;*/
+ 			/*position:absolute; bottom:0;*/
+ 			overflow: hidden
+ 		}
+ 		.subblocktarget{
+            text-align: center;
+            background-color: rgb(0,40,0);
+            color: rgb(0, 70, 150);
+ 			white-space:nowrap;
+ 			width:10%;
+ 		}	
+ 		.subblockcountdown{
+            text-align: center;
+            background-color: rgb(40,0,0);
+ 			white-space:nowrap;
+ 			width:10%;
+ 		}
+ 		.subblockmessage{
+ 			overflow: hidden;
+ 			height: 1em;
+ 			text-wrap: none;
+ 			white-space:nowrap;
+ 		}	
+ 		.detailhead{
+ 			border-bottom: 1px;
+ 		}	
+ 		</style>    
+	</head>
+	<body>
+		<div id="warning" class="warning">
+		</div>
+		<div class="mainclocksmall">
+			21:04:57
+		</div>
+		<table class="subblocktable">
+			<th class="detailhead">
+				<tr>
+					<td class="subblocktarget">Target</td>
+					<td class="subblockcountdown">Countdown</td>
+					<td class="subblockmessage">Message</td>
+				</tr>
+			</th>
+			<tr>
+				<td class="subblocktarget">
+					21:22:00
+				</td>
+				<td class="subblockcountdown">
+					00:07:00
+				</td>
+				<td class="subblockmessage">
+					Innleder ferdig, går av scenen.
+				</td>
+			<tr>
+				<td class="subblocktarget">
+					21:22:00
+				</td>
+				<td class="subblockcountdown">
+					00:07:00
+				</td>
+				<td class="subblockmessage">
+					Innleder ferdig, går av scenen.
+				</td>
+			</tr>
+			<tr>
+				<td class="subblocktarget">
+					21:22:15
+				</td>
+				<td class="subblockcountdown">
+					00:07:15
+				</td>
+				<td class="subblockmessage">
+					VB / Omrigg 
+				</td>
+			</tr>
+			<tr>
+				<td class="subblocktarget">
+					21:42:45
+				</td>
+				<td class="subblockcountdown">
+					00:07:45
+				</td>
+				<td class="subblockmessage">
+					Innleder ferdig, går av scenen.
+				</td>
+			</tr>
+			</tr>
+		</table>
+	</body>
+
+</html>
