@@ -16,11 +16,12 @@ function checkTime(){
 	if(server.getTime() < now.getTime()-1000 || 
 	   server.getTime() > now.getTime()+10000 ){
 		$("#warning").text("Warning: Server time was " + ((server - now)/1000.0) + " seconds before client time while sending the page, all clocks may be incorrect.");
+		console.log("SetW" + now+  commonInfo.serverTime+ server+ "Warning: Server time " + ((server - now)/1000.0) + " seconds off, all clocks will be incorrect." );
 	}else{
 		$("#warning").text("");
 	}
 		//$("#warning").text("Warning: Server time " + ((server - now)/1000.0) + " seconds off, all clocks will be incorrect.");
-	console.log("SetW" + now+  commonInfo.serverTime+ server+ "Warning: Server time " + ((server - now)/1000.0) + " seconds off, all clocks will be incorrect." );
+
 }
 function pad (str, max) {
   return str.length < max ? pad("0" + str, max) : str;

@@ -61,10 +61,11 @@ function ajaxUpdate(){
  	if(curSec < 5 || (curSec > 30 && curSec < 35)){
  		resyncTimeout();
  	}
- 	console.log("Tryajax")
+ 	//console.log("Tryajax")
 	$.ajax({
 	  url: "{%url centraltimer.views.homeajax %}",
 	}).done(function ( data ) {
+		$("#ajaxWarning").text("");
 	  /*if( console && console.log ) {
 	    console.log("Sample of data:", data.slice(0, 100));
 	  }*/
@@ -85,6 +86,8 @@ function ajaxUpdate(){
 		checkTime();
 		updateTimes();
 		clearOutside();
+	}).error(function (data){
+		$("#ajaxWarning").text("Warning: Error while getting update from server. Deadlines may be outdated.");
 	});
 }
 function updateTime() {
